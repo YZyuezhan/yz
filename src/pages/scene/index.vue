@@ -1,20 +1,24 @@
 <template>
-    <div id="webgl-container"></div>
+    <Suspense>
+        <template #default>
+            <div id="webgl-container"></div>
+        </template>
+        <template #fallback>
+            <div>正在加载</div>
+        </template>
+    </Suspense>
 </template>
 
 <script setup lang="ts">
 import { UseThree, useThree } from "../../hooks/useThree";
 import { generateGalaxy, conversionGalaxy } from "./tools"
 import { Tween } from "@tweenjs/tween.js";
-import { onMounted } from "vue"
 let THREE: UseThree = useThree("webgl-container")
 const { scene } = THREE
 
 const emits = defineEmits(["loaded", "disposed"])
 
-
 let galaxy: any = null
-
 
 
 // 加载星系
@@ -48,10 +52,6 @@ const disposeGalaxy = () => {
         galaxy && (galaxy.points.rotation.y -= 0.003)
     })
 }
-
-
-onMounted(() => {
-})
 
 // 创建后处理对象EffectComposer，WebGL渲染器作为参数
 

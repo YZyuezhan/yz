@@ -61,7 +61,6 @@ onUnmounted(() => {
 
 <style scoped>
 .background {
-
     /* background-image: url("../../assets/background.png"); */
     background-image: url("https://img1.baidu.com/it/u=1055051213,2316556634&fm=253&fmt=auto&app=138&f=JPEG?w=1025&h=577");
     background-size: 100vw 100vh;
