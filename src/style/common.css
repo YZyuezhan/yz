@@ -1,0 +1,18 @@
+* {
+    box-sizing: border-box;
+    user-select: none;
+}
+
+html,
+body {
+    margin: 0px;
+    padding: 0px;
+}
+
+
+#app {
+    width: 100vw;
+    height: 100vh;
+    position: relative;
+    z-index: 1;
+}
